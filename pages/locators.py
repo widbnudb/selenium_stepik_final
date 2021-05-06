@@ -19,7 +19,7 @@ class MainPageLocators:
 
 class LoginPageLocators:
     LOGIN_FORM = (By.ID, "login_form")
-    REGISTER_FORM = (By.ID, "register_from")
+    REGISTER_FORM = (By.ID, "register_form")
     REGISTER_EMAIL_FIELD = (By.NAME, "registration-email")
     REGISTER_PASSWORD_FIELD = (By.NAME, "registration-password1")
     REGISTER_CONFIRM_PASSWORD_FIELD = (By.NAME, "registration-password2")
