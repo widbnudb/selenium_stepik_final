@@ -17,3 +17,4 @@ def browser(request):
     browser = webdriver.Chrome(executable_path=r'D:\Exe\chromedriver_win32\chromedriver.exe', options=options)
     yield browser
     browser.quit()
+
