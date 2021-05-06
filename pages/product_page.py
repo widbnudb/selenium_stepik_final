@@ -12,7 +12,7 @@ class ProductPage(BasePage):
         self.should_be_basket_button()
 
     def should_be_product_url(self):
-        assert self.is_url_correct("promo=offer"), "Incorrect url"
+        assert self.is_url_correct("catalogue"), "Incorrect url"
 
     def should_be_basket_button(self):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON), "Basket button isn't presented"

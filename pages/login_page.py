@@ -3,6 +3,26 @@ from .locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
+
+    def register_new_user(self, email, password):
+        assert self.is_element_present(*LoginPageLocators.REGISTER_EMAIL_FIELD), "Email field in the registration " \
+                                                                                 "form is not presented"
+        email_field = self.browser.find_element(*LoginPageLocators.REGISTER_EMAIL_FIELD)
+        email_field.send_keys(email)
+        assert self.is_element_present(*LoginPageLocators.REGISTER_PASSWORD_FIELD), "Password field in the " \
+                                                                                    "registration form is not presented"
+        password_field = self.browser.find_element(*LoginPageLocators.REGISTER_PASSWORD_FIELD)
+        password_field.send_keys(password)
+        assert self.is_element_present(*LoginPageLocators.REGISTER_CONFIRM_PASSWORD_FIELD), "Confirm password field " \
+                                                                                            "in the registration " \
+                                                                                            "form is not presented"
+        password_field = self.browser.find_element(*LoginPageLocators.REGISTER_CONFIRM_PASSWORD_FIELD)
+        password_field.send_keys(password)
+        assert self.is_element_present(*LoginPageLocators.REGISTER_BUTTON), "Confirm button is not presented in the " \
+                                                                            "registration form"
+        confirm_button = self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON)
+        confirm_button.click()
+
     def should_be_login_page(self):
         self.should_be_login_url()
         self.should_be_login_form()
